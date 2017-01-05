@@ -38,4 +38,11 @@ class VendingMachine
     snacks_by_quantity = how_many_snacks
     snacks_by_quantity.keys.reduce(:+)
   end
+
+  def first_letters
+    letters = @inventory.map do |snack|
+      snack.name[0]
+    end
+    letters.join
+  end
 end
