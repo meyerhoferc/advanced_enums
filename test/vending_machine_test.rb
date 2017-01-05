@@ -1,6 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/vending_machine'
+require './lib/snack'
+
 
 class VendingMachineTest < Minitest::Test
 
