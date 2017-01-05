@@ -23,4 +23,14 @@ class VendingMachine
     end
     quantities_of_snacks
   end
+
+  def inventory_by_alphabet
+    alphabetical = Hash.new
+    @inventory.each do |snack|
+      letter = snack.name[0].upcase
+      alphabetical[letter] << snack if alphabetical.has_key?(letter)
+      alphabetical[letter] = [snack] if !alphabetical.has_key?(letter)
+    end
+    alphabetical.sort.reverse.to_h
+  end
 end

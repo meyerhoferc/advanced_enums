@@ -68,8 +68,7 @@ class VendingMachineTest < Minitest::Test
     assert_equal "Burrito", vm.how_many_snacks[4][1].name
   end
 
-  def test_can_collect_all_items_by_first_letter_of_alph
-    skip
+  def test_can_collect_all_items_by_first_letter_of_alphabet
     vm = VendingMachine.new
     snack1 = Snack.new("White Castle Burger", 1)
     snack2 = Snack.new("Snickers", 4)
