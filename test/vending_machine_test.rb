@@ -63,9 +63,7 @@ class VendingMachineTest < Minitest::Test
     vm.add_snack(snack2)
     vm.add_snack(snack3)
 
-    #showing a few ways of how to test for this
     assert_equal ({1=>[snack1], 4=>[snack2, snack3]}), vm.how_many_snacks
-    # play around with what is happening below
     assert_equal "Snickers", vm.how_many_snacks[4][0].name
     assert_equal "Burrito", vm.how_many_snacks[4][1].name
   end

@@ -1,4 +1,5 @@
 require_relative 'snack'
+require 'pry'
 
 class VendingMachine
   attr_reader :inventory
@@ -13,8 +14,13 @@ class VendingMachine
   def snacks_by_name
     @inventory.map { |snack| snack.name}
   end
-  #
-  # def how_many_snacks
-  #   @inventory.map { |snack| }
-  # end
+
+  def how_many_snacks
+    quantities_of_snacks = Hash.new
+    @inventory.each do |snack|
+      quantities_of_snacks[snack.quantity] << snack if quantities_of_snacks.has_key?(snack.quantity)
+      quantities_of_snacks[snack.quantity] = [snack] if !quantities_of_snacks.has_key?(snack.quantity)
+    end
+    quantities_of_snacks
+  end
 end
