@@ -33,4 +33,9 @@ class VendingMachine
     end
     alphabetical.sort.reverse.to_h
   end
+
+  def total_num_items
+    snacks_by_quantity = how_many_snacks
+    snacks_by_quantity.keys.reduce(:+)
+  end
 end
