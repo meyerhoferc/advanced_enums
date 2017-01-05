@@ -45,4 +45,11 @@ class VendingMachine
     end
     letters.join
   end
+
+  def change_indexes
+    @inventory.unshift(0)
+    indices = (0..(@inventory.count - 1)).to_a
+    indices.shift
+    indices
+  end
 end
